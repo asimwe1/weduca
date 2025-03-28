@@ -18,7 +18,7 @@ const StudentPlatform = () => {
       </h1>
 
       {/* Tab Navigation */}
-      <div className="flex justify-center gap-4 mb-12">
+      <div className="flex flex-wrap md:flex-nowrap justify-center gap-4 mb-12">
         {tabs.map((tab, index) => (
           <button
             key={index}

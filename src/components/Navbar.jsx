@@ -1,21 +1,17 @@
-
-
 import { useState } from "react"
-
 
 export default function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 w-full shadow-md shadow- shadow-gray-400  bg-white">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
-        <a href="/" className="text-2xl font-bold text-green-600">
+    <header className="sticky top-0 z-50 w-full shadow-md shadow-gray-400 bg-white">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <a href="/" className="text-xl sm:text-2xl font-bold text-green-600">
           WEDUCA APPLY LTD
         </a>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden items-center space-x-6 md:flex">
+        <nav className="hidden lg:flex items-center space-x-6">
           <a href="#" className="text-sm font-medium text-gray-700 transition-colors hover:text-green-600">
             Students
           </a>
@@ -26,7 +22,6 @@ export default function Navbar() {
             Institutions
           </a>
 
-          {/* Desktop Dropdown */}
           <div className="relative">
             <button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -43,7 +38,6 @@ export default function Navbar() {
               </svg>
             </button>
 
-            {/* Dropdown Menu */}
             {isDropdownOpen && (
               <div className="absolute right-0 mt-2 w-48 rounded-md bg-white py-2 shadow-lg ring-1 ring-black ring-opacity-5">
                 <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
@@ -60,7 +54,6 @@ export default function Navbar() {
           </div>
         </nav>
 
-        {/* Desktop Buttons */}
         <div className="hidden items-center space-x-4 md:flex">
           <a
             href="#"
@@ -76,17 +69,19 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="md:hidden" aria-label="Toggle menu">
-          <svg className="h-6 w-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <button
+          onClick={() => setIsMobileMenuOpen(true)}
+          className="lg:hidden text-gray-700"
+          aria-label="Open menu"
+        >
+          <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-white md:hidden">
+        <div className="fixed inset-0 z-50 bg-white lg:hidden">
           <div className="flex h-16 items-center justify-between px-4">
             <a href="/" className="text-2xl font-bold text-green-600">
               WEDUCA APPLY LTD

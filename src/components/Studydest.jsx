@@ -25,13 +25,13 @@ const destinations = [
 
 const StudyDestinations = () => {
   return (
-    <section className="py-16 px-4">
+    <section className="py-12 sm:py-16 px-4">
       <div className="container mx-auto max-w-7xl">
-        <h1 className="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-16">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-gray-800 mb-8 sm:mb-16">
           Choose Your Study Abroad Destination
         </h1>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
           {destinations.map((destination) => (
             <div
               key={destination.title}
@@ -39,14 +39,14 @@ const StudyDestinations = () => {
             >
               <div className="relative aspect-[4/3] overflow-hidden">
                 <img
-                  src={destination.image || "/placeholder.svg"}
+                  src={destination.image}
                   alt={destination.alt}
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
 
-              <div className="p-6">
-                <h2 className="text-xl font-semibold text-gray-800 mb-4">
+              <div className="p-4 sm:p-6">
+                <h2 className="text-lg sm:text-xl font-semibold text-gray-800 mb-4">
                   {destination.title}
                 </h2>
                 <a
