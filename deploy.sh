@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SERVER="landry@139.84.240.44"
-PASSWORD="Impamopee.870"
+PASSWORD="secret"
 
 echo "Switching to branch master"
 git checkout master
