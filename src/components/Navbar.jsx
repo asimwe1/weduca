@@ -7,7 +7,8 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full shadow-md shadow-gray-400 bg-white">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <a href="/" className="text-xl sm:text-2xl font-bold text-green-600">
+        <a href="/" className="text-xl sm:text-2xl font-bold text-green-600 flex">
+        <img src="/logo.png" alt="weduca logo" className="w-[64px]" />
           WEDUCA APPLY LTD
         </a>
 

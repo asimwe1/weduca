@@ -5,7 +5,7 @@ export function WedukaBranding() {
     <div className="flex flex-col items-center space-y-2">
       <a href="/" className="flex items-center space-x-2">
         <div className="bg-primary p-2 rounded-full">
-          <Building2 className="h-6 w-6 text-primary-foreground" />
+          <img src="/logo.png" alt="weduca logo" className="w-[64px]" />
         </div>
         <span className="text-2xl font-bold">Weduka Apply</span>
       </a>
