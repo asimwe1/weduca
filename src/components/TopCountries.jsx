@@ -59,11 +59,11 @@ const TopCountries = () => {
       <div className="container mx-auto px-6">
         <h2 className="text-3xl font-bold text-center mb-16">Top Countries</h2>
         <div className="relative w-full overflow-hidden">
-          <div className="flex animate-slide whitespace-nowrap">
+          <div className="flex animate-slide h-[22rem] whitespace-nowrap">
             {[...countries, ...countries].map((country, index) => (
               <div
                 key={`${country.name}-${index}`}
-                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow mx-4 flex-shrink-0 w-[300px]"
+                className="bg-white rounded-lg shadow-md overflow-hidden h-[20rem] hover:shadow-lg transition-shadow mx-4 flex-shrink-0 w-[300px]"
               >
                 <img 
                   src={country.image} 

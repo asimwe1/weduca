@@ -1,10 +1,27 @@
+import { useState } from "react";
 
-
-import { useState } from "react"
-import VideoPlayer from "./VideoPlayer"
+const VideoPlayer = ({ videoSrc }) => {
+  return (
+    <div className="w-full h-full">
+      <iframe
+        src={videoSrc}
+        title="Study program search interface"
+        className="w-full h-full"
+        frameBorder="0"
+        allow="autoplay; fullscreen"
+        allowFullScreen
+      ></iframe>
+    </div>
+  );
+};
 
 const StudyProgramSearch = () => {
-  const [activeTab, setActiveTab] = useState("students")
+  const [activeTab, setActiveTab] = useState("students");
+
+  const videoSources = {
+    students: "https://res.cloudinary.com/dhrhfjgqa/video/upload/v1743260295/Instagram_osaho5.mp4",
+    partners: "https://res.cloudinary.com/dhrhfjgqa/video/upload/v1741321620/ApplyBoard_Product_Feature_-_Student_-_Landing_Page_kv8tha.mp4"
+  };
 
   return (
     <section className="py-16 px-4 bg-gray-50">
@@ -41,15 +58,14 @@ const StudyProgramSearch = () => {
         {/* Laptop Mockup */}
         <div className="max-w-5xl mx-auto relative">
           <div className="bg-white rounded-2xl overflow-hidden aspect-[16/9] relative z-10">
-            <VideoPlayer />
+            <VideoPlayer videoSrc={videoSources[activeTab]} />
           </div>
           {/* Laptop Base */}
           <div className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 w-1/4 h-4 bg-gray-200 rounded-b-xl z-0"></div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default StudyProgramSearch
-
+export default StudyProgramSearch;

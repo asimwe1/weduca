@@ -14,7 +14,7 @@ export default function Hero() {
         <div className="absolute inset-0 " />
       </div>
 
-      {/* Content */}
+      {/* Content */}u
       <div className="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-20 lg:px-8">
         <div className="max-w-2xl space-y-4 sm:space-y-8">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
@@ -37,7 +37,7 @@ export default function Hero() {
             </a>
 
             <a
-              href="#"
+              href="/services/schools"
               className="w-full sm:w-fit rounded-md border-2 border-white bg-transparent px-6 sm:px-8 py-3 text-sm sm:text-base font-semibold text-white transition-colors hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-green-600"
             >
               I want to welcome students to my campus
