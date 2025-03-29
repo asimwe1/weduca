@@ -56,13 +56,13 @@ export default function Navbar() {
 
         <div className="hidden items-center space-x-4 md:flex">
           <a
-            href="#"
+            href="/auth/login"
             className="rounded-md border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:border-green-600 hover:text-green-600"
           >
             Login
           </a>
           <a
-            href="#"
+            href="/auth/signup"
             className="rounded-md bg-green-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-green-600"
           >
             Register
@@ -109,7 +109,7 @@ export default function Navbar() {
                 Recruitment Partners
               </a>
               <a
-                href="#"
+                href="/services/schools"
                 className="text-lg font-medium text-gray-700 hover:text-green-600"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -124,14 +124,14 @@ export default function Navbar() {
               </a>
               <div className="pt-4">
                 <a
-                  href="#"
+                  href="/auth/login"
                   className="mb-3 block w-full rounded-md border border-gray-300 px-4 py-2 text-center text-sm font-medium text-gray-700 transition-colors hover:border-green-600 hover:text-green-600"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Login
                 </a>
                 <a
-                  href="#"
+                  href="/auth/signup"
                   className="block w-full rounded-md bg-green-600 px-4 py-2 text-center text-sm font-medium text-white transition-colors hover:bg-green-600"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
