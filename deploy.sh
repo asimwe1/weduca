@@ -1,23 +1,23 @@
 #!/bin/bash
 
 SERVER="landry@139.84.240.44"
-PASSWORD="secret"
+PROJECT_PATH="/var/www/weducaapplyltd.com"
 
 echo "Switching to branch master"
 git checkout master
 
-echo "Building app..."
+echo "Building React + Vite app..."
+npm install
 npm run build
 
 echo "Copying files to server..."
-scp -r dist/* $SERVER:/var/www/weducaapplyltd.com/
+scp -r dist/* $SERVER:$PROJECT_PATH/
 
-echo "Done!"
+echo "Deployment complete!"
 echo "======================================= >>>>>>>>>>>>>>>>>>>>>> \n"
-echo "\n"
 
 echo "Restarting Nginx on the server..."
-ssh "$SERVER" "echo '$PASSWORD' | sudo -S systemctl restart nginx"
+ssh "$SERVER" "sudo systemctl restart nginx"
 
 # Check if the restart was successful
 if [ $? -eq 0 ]; then

@@ -1,23 +1,23 @@
 const countries = [
     {
       name: "CANADA",
-      flag: "https://res.cloudinary.com/dhrhfjgqa/image/upload/v1741419700/canada-flag_o1ug1r.png"
+      flag: "https://res.cloudinary.com/dhrhfjgqa/image/upload/v1743229025/canada-flag-round-small_gs32yw.png"
     },
     {
       name: "UNITED STATES",
-      flag: "https://res.cloudinary.com/dhrhfjgqa/image/upload/v1741419700/us-flag_o9q7yo.png"
+      flag: "https://res.cloudinary.com/dhrhfjgqa/image/upload/v1743229162/united-states-of-america-flag-round-small_vkvh02.png"
     },
     {
       name: "UNITED KINGDOM",
-      flag: "https://res.cloudinary.com/dhrhfjgqa/image/upload/v1741419700/uk-flag_iamqsb.png"
+      flag: "https://res.cloudinary.com/dhrhfjgqa/image/upload/v1743229395/united-kingdom-flag-round-small_vepybx.png"
     },
     {
       name: "AUSTRALIA",
-      flag: "https://res.cloudinary.com/dhrhfjgqa/image/upload/v1741419700/australia-flag_qyqcpl.png"
+      flag: "https://res.cloudinary.com/dhrhfjgqa/image/upload/v1743229383/australia-flag-round-small_zyulfu.png"
     },
     {
-      name: "IRELAND",
-      flag: "https://res.cloudinary.com/dhrhfjgqa/image/upload/v1741419700/ireland-flag_e1ocki.png"
+      name: "GERMANY",
+      flag: "https://res.cloudinary.com/dhrhfjgqa/image/upload/v1743229275/germany-flag-round-small_zumvuu.png"
     }
   ];
   
