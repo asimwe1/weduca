@@ -50,182 +50,131 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // Prepare the template parameters for EmailJS
-    const templateParams = {
-      firstName: formData.firstName,
-      lastName: formData.lastName,
-      email: formData.email,
-      phone: formData.phone,
-      title: formData.title,
-      country: formData.country,
-      schoolName: formData.schoolName,
-      isReferred: formData.isReferred ? "Yes" : "No",
-      referredName: formData.referredName || "N/A",
-      referredEmail: formData.referredEmail || "N/A",
-      comments: formData.comments || "No comments",
-      receiveUpdates: formData.receiveUpdates ? "Yes" : "No"
-    };
-
-    try {
-      // Send email using EmailJS
-      const response = await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        templateParams,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      );
-
-      console.log("Email sent successfully:", response.status, response.text);
-      setNotification({ message: "Form submitted and email sent successfully!", type: "success" });
-
-      // Optional: Reset form after submission
-      setFormData({
-        country: "",
-        schoolName: "",
-        isReferred: false,
-        comments: "",
-        receiveUpdates: false,
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        title: "",
-        referredName: "",
-        referredEmail: ""
-      });
-    } catch (error) {
-      console.error("Failed to send email:", error);
-      setNotification({ message: "Failed to send email. Please try again.", type: "error" });
-    }
+    // Handle form submission logic
   };
 
   return (
-    <section className="py-16 px-6 bg-white flex justify-center items-center min-h-screen">
-      <div className="container mx-auto">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-green-900">
+    <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white flex justify-center items-center min-h-screen">
+      <div className="container mx-auto max-w-4xl">
+        <div className="text-center mb-8">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-900">
             A Platform That Supports You End-to-End
           </h2>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center justify-center">
-          <div className="flex justify-center">
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="form-group">
-                <label htmlFor="country" className="block mb-2 text-sm font-medium">
-                  Destination Country<span className="text-red-500">*</span>
+        <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-8">
+          <form onSubmit={handleSubmit} className="w-full max-w-lg space-y-4">
+            <div>
+              <label htmlFor="country" className="block mb-1 text-sm font-medium">
+                Destination Country<span className="text-red-500">*</span>
+              </label>
+              <select
+                id="country"
+                name="country"
+                className="w-full p-2 border border-gray-300 rounded-md"
+                required
+                value={formData.country}
+                onChange={handleChange}
+              >
+                <option value="">--select an item--</option>
+                {countries.map((country) => (
+                  <option key={country} value={country}>{country}</option>
+                ))}
+              </select>
+            </div>
+            
+            {formFields.map((field) => (
+              <div key={field.name}>
+                <label htmlFor={field.name} className="block mb-1 text-sm font-medium">
+                  {field.label}{field.required && <span className="text-red-500">*</span>}
                 </label>
-                <select
-                  id="country"
-                  name="country"
-                  className="w-[40rem] p-2.5 border border-gray-300 rounded-md"
-                  required
-                  value={formData.country}
+                <input
+                  type={field.type}
+                  id={field.name}
+                  name={field.name}
+                  className="w-full p-2 border border-gray-300 rounded-md"
+                  required={field.required}
+                  value={formData[field.name] || ""}
                   onChange={handleChange}
-                >
-                  <option value="">--select an item--</option>
-                  {countries.map((country) => (
-                    <option key={country} value={country}>{country}</option>
-                  ))}
-                </select>
+                />
               </div>
+            ))}
 
-              {formFields.map((field) => (
-                <div className="form-group" key={field.name}>
-                  <label htmlFor={field.name} className="block mb-2 text-sm font-medium">
-                    {field.label}{field.required && <span className="text-red-500">*</span>}
+            <div className="flex items-center gap-2">
+              <input
+                type="checkbox"
+                id="isReferred"
+                name="isReferred"
+                checked={formData.isReferred}
+                onChange={handleChange}
+              />
+              <label htmlFor="isReferred">Referred by someone in Weduka Apply Ltd</label>
+            </div>
+
+            {formData.isReferred && (
+              <>
+                <div>
+                  <label htmlFor="referredName" className="block mb-1 text-sm font-medium">
+                    Referred by Full Name
                   </label>
                   <input
-                    type={field.type}
-                    id={field.name}
-                    name={field.name}
-                    className="w-[40rem] p-2.5 border border-gray-300 rounded-md"
-                    required={field.required}
-                    value={formData[field.name] || ""}
+                    type="text"
+                    id="referredName"
+                    name="referredName"
+                    className="w-full p-2 border border-gray-300 rounded-md"
+                    value={formData.referredName}
                     onChange={handleChange}
                   />
                 </div>
-              ))}
-
-              <div className="form-group">
-                <div className="flex items-center gap-2">
+                <div>
+                  <label htmlFor="referredEmail" className="block mb-1 text-sm font-medium">
+                    Referred by Email
+                  </label>
                   <input
-                    type="checkbox"
-                    id="isReferred"
-                    name="isReferred"
-                    checked={formData.isReferred}
+                    type="email"
+                    id="referredEmail"
+                    name="referredEmail"
+                    className="w-full p-2 border border-gray-300 rounded-md"
+                    value={formData.referredEmail}
                     onChange={handleChange}
                   />
-                  <label htmlFor="isReferred">Referred by someone in Weduka Apply Ltd</label>
                 </div>
-              </div>
+              </>
+            )}
 
-              {formData.isReferred && (
-                <>
-                  <div className="form-group">
-                    <label htmlFor="referredName" className="block mb-2 text-sm font-medium">
-                      Referred by Full Name
-                    </label>
-                    <input
-                      type="text"
-                      id="referredName"
-                      name="referredName"
-                      className="w-[40rem] p-2.5 border border-gray-300 rounded-md"
-                      value={formData.referredName}
-                      onChange={handleChange}
-                    />
-                  </div>
+            <div>
+              <label htmlFor="comments" className="block mb-1 text-sm font-medium">
+                Any additional comments:
+              </label>
+              <textarea
+                id="comments"
+                name="comments"
+                rows={3}
+                className="w-full p-2 border border-gray-300 rounded-md"
+                value={formData.comments}
+                onChange={handleChange}
+              ></textarea>
+            </div>
 
-                  <div className="form-group">
-                    <label htmlFor="referredEmail" className="block mb-2 text-sm font-medium">
-                      Referred by Email
-                    </label>
-                    <input
-                      type="email"
-                      id="referredEmail"
-                      name="referredEmail"
-                      className="w-[40rem] p-2.5 border border-gray-300 rounded-md"
-                      value={formData.referredEmail}
-                      onChange={handleChange}
-                    />
-                  </div>
-                </>
-              )}
+            <button
+              type="submit"
+              className="bg-green-600 text-white px-4 py-2 w-full rounded-md font-medium hover:bg-green-700"
+            >
+              Submit
+            </button>
+          </form>
 
-              <div className="form-group">
-                <label htmlFor="comments" className="block mb-2 text-sm font-medium">
-                  Any additional comments:
-                </label>
-                <textarea
-                  id="comments"
-                  name="comments"
-                  rows={3}
-                  className="w-[40rem] p-2.5 border border-gray-300 rounded-md"
-                  value={formData.comments}
-                  onChange={handleChange}
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                className="bg-green-600 text-white px-6 py-3 rounded-md font-medium hover:bg-green-600 hover:cursor-pointer"
-              >
-                Submit
-              </button>
-            </form>
-          </div>
-          <div className="hidden lg:block">
+          <div className="hidden lg:block w-[80%] lg:w-[40%]">
             <img
               src="https://res.cloudinary.com/dhrhfjgqa/image/upload/v1741323439/School-Footer_Illustration_ldbjwo.webp"
               alt="School recruitment illustration"
-              className="w-[24rem] h-auto top-0"
+              className="w-full h-auto"
             />
           </div>
         </div>
 
         {notification.message && (
-          <div className={`mt-4 p-4 text-white ${notification.type === "success" ? "bg-green-600" : "bg-red-600"}`}>
+          <div className={`mt-4 p-4 text-white text-center rounded-md ${notification.type === "success" ? "bg-green-600" : "bg-red-600"}`}>
             {notification.message}
           </div>
         )}
