@@ -14,30 +14,30 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative flex items-center justify-center text-center mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-20 lg:px-8">
+      <div className="relative flex items-start justify-start text-left mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-20 lg:px-8">
         <div className="max-w-2xl space-y-4 sm:space-y-8">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
             Your Future Goes Beyond Borders
           </h1>
 
-          <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-3 sm:space-y-0 items-center justify-center">
+          <div className="flex flex-col gap-4 w-fit">
             <a
               href="#"
-              className="w-full sm:w-auto text-center rounded-md bg-white px-6 sm:px-8 py-3 text-sm sm:text-base font-semibold text-green-600 transition-colors hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-green-600"
+              className="w-fit inline-block rounded-md bg-white px-6 py-3 text-sm sm:text-base font-semibold text-green-600 transition-colors hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-green-600"
             >
               I want to study abroad
             </a>
 
             <a
               href="#"
-              className="w-full sm:w-auto text-center rounded-md border-2 border-white bg-transparent px-6 sm:px-8 py-3 text-sm sm:text-base font-semibold text-white transition-colors hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-green-600"
+              className="w-fit inline-block rounded-md border-2 border-white bg-transparent px-6 py-3 text-sm sm:text-base font-semibold text-white transition-colors hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-green-600"
             >
               I want to guide international students
             </a>
 
             <a
               href="/services/schools"
-              className="w-full sm:w-auto text-center rounded-md border-2 border-white bg-transparent px-6 sm:px-8 py-3 text-sm sm:text-base font-semibold text-white transition-colors hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-green-600"
+              className="w-fit inline-block rounded-md border-2 border-white bg-transparent px-6 py-3 text-sm sm:text-base font-semibold text-white transition-colors hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-green-600"
             >
               I want to welcome students to my campus
             </a>
