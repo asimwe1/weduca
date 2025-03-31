@@ -10,7 +10,7 @@ const WhatsAppBubble = () => {
       href="https://wa.me/250789000213"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 flex items-center gap-2 p-3 bg-white shadow-lg rounded-full transition-all duration-300 hover:shadow-xl"
+      className="fixed bottom-6 z-10 right-6 flex items-center gap-2 p-3 bg-white shadow-lg rounded-full transition-all duration-300 hover:shadow-xl"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
