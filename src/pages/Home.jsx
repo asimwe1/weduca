@@ -10,6 +10,7 @@ import StudyProgramSearch from '../components/StudyProgram'
 
 import TrustedInstitutionsSection from '../components/Partners'
 import StudentPlatform from '../components/Platform'
+import WhatsAppBubble from '../components/WhatsAppBubble'
 
 
 function Home() {
@@ -18,6 +19,7 @@ function Home() {
     <>
     <Navbar />
     <Hero />
+    <WhatsAppBubble />
     <StudentPlatform />
     <StatsSection />
     <TrustedInstitutionsSection />

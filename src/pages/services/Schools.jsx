@@ -12,6 +12,7 @@ import { Section } from 'lucide-react';
 import ImpactSection from '../../components/ImpactSection';
 import TrustedInstitutions from '../../components/TrustedInstitution';
 import ContactForm from '../../components/ContactForm';
+import WhatsAppBubble from '../../components/WhatsAppBubble';
 
 
 const FeaturedSchools = () => (
@@ -65,6 +66,7 @@ const Schools = () => {
     <div>
         <Navbar />
       <HeroSection />
+      <WhatsAppBubble />
       <WhyChoose />
       <ImpactSection />
       <TopCountries />

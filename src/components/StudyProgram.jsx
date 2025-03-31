@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const VideoPlayer = ({ videoSrc }) => {
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full ">
       <iframe
         src={videoSrc}
         title="Study program search interface"
