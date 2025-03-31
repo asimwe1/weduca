@@ -7,7 +7,7 @@ const WhatsAppBubble = () => {
   
   return (
     <a
-      href="https://wa.me/250785674868"
+      href="https://wa.me/250789000213"
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 flex items-center gap-2 p-3 bg-white shadow-lg rounded-full transition-all duration-300 hover:shadow-xl"
