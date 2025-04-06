@@ -5,6 +5,7 @@ import './App.css'
 import LoginPage from "./pages/auth/LoginPage";
 import SignupPage from "./pages/auth/SignupPage";
 import NotFound from "./pages/NotFound";
+import StudyIn from "./pages/services/study-in-[country]";
 
 // import Contact from "./pages/Contact";
 
@@ -17,6 +18,7 @@ function App() {
             <Route path="/auth/login" element={<LoginPage />} />
             <Route path="/auth/signup" element={<SignupPage />} />
             <Route path="*" element={<NotFound />} />
+            <Route path="/study-in/:country" element={<StudyIn />} />
           </Routes>
     </Router>
   );
